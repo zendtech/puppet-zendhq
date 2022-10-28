@@ -4,7 +4,9 @@
   "author": "Zend",
   "summary": "Zend module for installig and configuring ZendHQ",
   "license": "MIT",
-  "source": "",
+  "source": "https://github.com/zendtech/puppet-zendhq",
+  "project_page": "https://github.com/zendtech/puppet-zendhq",
+  "issues_url": "https://github.com/zendtech/puppet-zendhq/issues",
   "dependencies": [
     {
       "name": "puppetlabs/stdlib",

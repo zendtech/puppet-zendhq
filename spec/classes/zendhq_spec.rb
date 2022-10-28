@@ -20,6 +20,7 @@ describe 'zendhq' do
 
       describe 'installs epel-release on CentOS' do
         let(:params) { { license_source: file_uri } }
+
         if os_facts[:os]['name'] == 'CentOS'
           it { is_expected.to contain_package('epel-release') }
         end
