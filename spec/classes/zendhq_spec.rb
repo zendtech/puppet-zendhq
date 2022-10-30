@@ -16,6 +16,8 @@ describe 'zendhq' do
         it { is_expected.to contain_class('zendhq::package') }
         it { is_expected.to contain_class('zendhq::service') }
         it { is_expected.to contain_class('zend_common::license').with_source(file_uri) }
+        it { is_expected.to contain_class('zend_common::license').that_notifies('Class[zendhq::service]') }
+        it { is_expected.to contain_class('zend_common::license').that_subscribes_to('Class[zendhq::package]') }
       end
 
       describe 'installs epel-release on CentOS' do
@@ -30,7 +32,8 @@ describe 'zendhq' do
         settings = { 'zendhq.daemon_uri': 'tcp://0.0.0.0:10090' }
         let(:params) { { license_source: file_uri, settings: settings } }
 
-        it { is_expected.to contain_class('zendhq::config') }
+        it { is_expected.to contain_class('zendhq::config').that_notifies('Class[zendhq::service]') }
+        it { is_expected.to contain_class('zendhq::config').that_subscribes_to('Class[zendhq::package]') }
       end
     end
   end
