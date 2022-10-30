@@ -1,1 +1,6 @@
---- {}
+---
+zendhq::service_ensure: 'running'
+zendhq::service_name: 'zendhqd'
+zendhq::service_enable: true
+zendhq::package_ensure: 'installed'
+zendhq::package_name: 'zendhqd'

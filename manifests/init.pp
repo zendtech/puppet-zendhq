@@ -43,12 +43,12 @@ class zendhq (
   String[1] $license_source,
   Optional[Hash[String, Variant[String, Integer]]] $settings = undef,
   Optional[String[1]] $service_provider                      = undef,
-  Enum['running', 'stopped'] $service_ensure                 = $zendhq::params::service_ensure,
-  String[1] $service_name                                    = $zendhq::params::service_name,
-  Boolean $service_enable                                    = $zendhq::params::service_enable,
-  String[1] $package_ensure                                  = $zendhq::params::package_ensure,
-  String[1] $package_name                                    = $zendhq::params::package_name,
-) inherits zendhq::params {
+  Enum['running', 'stopped'] $service_ensure                 = 'running',
+  String[1] $service_name                                    = 'zendhqd',
+  Boolean $service_enable                                    = true,
+  String[1] $package_ensure                                  = 'installed',
+  String[1] $package_name                                    = 'zendhqd',
+) {
   if $facts['os']['name'] == 'CentOS' {
     package { 'epel-release': }
   }
