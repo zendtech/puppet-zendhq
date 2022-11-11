@@ -1,6 +1,6 @@
 # zend/zendhq Puppet Module
 
-This Puppet module manages ZendHQ, and Zend product add-on for ZendPHP Enterprise.
+This Puppet module manages ZendHQ, a Zend product add-on for ZendPHP Enterprise.
 
 ## Table of Contents
 
