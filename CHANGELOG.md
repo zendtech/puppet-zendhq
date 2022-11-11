@@ -2,10 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
-## Release 0.1.0
+## [v1.0.0](https://github.com/zendtech/puppet-zendhq/tree/v1.0.0) (2022-11-11)
+
+Initial release
 
 **Features**
 
-**Bugfixes**
-
-**Known Issues**
+- Manage ZendHQ service installation, configuration, and status

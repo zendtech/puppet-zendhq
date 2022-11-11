@@ -1,7 +1,7 @@
 {
   "name": "zend-zendhq",
-  "version": "0.1.0",
-  "author": "Zend",
+  "version": "1.0.0",
+  "author": "Zend by Perforce",
   "summary": "Zend module for installig and configuring ZendHQ",
   "license": "MIT",
   "source": "https://github.com/zendtech/puppet-zendhq",
@@ -57,13 +57,15 @@
       "operatingsystem": "Debian",
       "operatingsystemrelease": [
         "9",
-        "10"
+        "10",
+        "11"
       ]
     },
     {
       "operatingsystem": "Ubuntu",
       "operatingsystemrelease": [
         "18.04",
+        "22.04",
         "20.04"
       ]
     }
