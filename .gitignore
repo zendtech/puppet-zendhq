@@ -6,6 +6,7 @@
 *.iml
 /.bundle/
 /.idea/
+/.vscode/
 /.vagrant/
 /coverage/
 /bin/
