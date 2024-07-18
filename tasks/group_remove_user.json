@@ -1,0 +1,14 @@
+{
+  "description": "Remove one or more users from a group",
+  "input_method": "environment",
+  "parameters": {
+    "group": {
+      "description": "Group to remove one or more users from",
+      "type": "String[1]"
+    },
+    "user": {
+      "description": "User(s) to remove from the group",
+      "type": "String[1]"
+    }
+  }
+}

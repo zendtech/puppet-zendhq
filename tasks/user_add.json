@@ -1,0 +1,26 @@
+{
+  "description": "Create a user",
+  "input_method": "environment",
+  "parameters": {
+    "user": {
+      "description": "User to create",
+      "type": "String[1]"
+    },
+    "password": {
+      "description": "Password for user",
+      "type": "Optional[String[1]]"
+    },
+    "group": {
+      "description": "Optional group or comma-separated list of groups to add user to",
+      "type": "Optional[String[1]]"
+    },
+    "comment": {
+      "description": "Optional user comment",
+      "type": "Optional[String[1]]"
+    },
+    "disable": {
+      "description": "Optional disable user flag",
+      "type": "Optional[String[1]]"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "description": "Enable a given user",
+  "input_method": "environment",
+  "parameters": {
+    "user": {
+      "description": "User to enable",
+      "type": "String[1]"
+    }
+  }
+}

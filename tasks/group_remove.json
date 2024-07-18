@@ -1,0 +1,10 @@
+{
+  "description": "Remove a given group",
+  "input_method": "environment",
+  "parameters": {
+    "group": {
+      "description": "Group to remove",
+      "type": "String[1]"
+    }
+  }
+}

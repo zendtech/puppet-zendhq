@@ -1,0 +1,14 @@
+{
+  "description": "Add one or more users to a group",
+  "input_method": "environment",
+  "parameters": {
+    "group": {
+      "description": "Group to add one or more users to",
+      "type": "String[1]"
+    },
+    "user": {
+      "description": "User(s) to add to the group",
+      "type": "String[1]"
+    }
+  }
+}

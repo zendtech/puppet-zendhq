@@ -1,0 +1,18 @@
+{
+  "description": "Create a group",
+  "input_method": "environment",
+  "parameters": {
+    "group": {
+      "description": "Group to create",
+      "type": "String[1]"
+    },
+    "comment": {
+      "description": "Optional group comment",
+      "type": "Optional[String[1]]"
+    },
+    "permission_mask": {
+      "description": "Optional permission mask, such as 'r zray,mon,conf,ct,jq'",
+      "type": "Optional[String[1]]"
+    }
+  }
+}

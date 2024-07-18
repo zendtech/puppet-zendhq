@@ -1,0 +1,10 @@
+{
+  "description": "Remove a given user",
+  "input_method": "environment",
+  "parameters": {
+    "user": {
+      "description": "User to remove",
+      "type": "String[1]"
+    }
+  }
+}

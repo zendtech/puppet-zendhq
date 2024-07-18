@@ -1,0 +1,10 @@
+{
+  "description": "Disable a given user",
+  "input_method": "environment",
+  "parameters": {
+    "user": {
+      "description": "User to disable",
+      "type": "String[1]"
+    }
+  }
+}

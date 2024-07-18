@@ -1,0 +1,14 @@
+{
+  "description": "Set the permissions for a given group",
+  "input_method": "environment",
+  "parameters": {
+    "group": {
+      "description": "Group to set the permissions of",
+      "type": "String[1]"
+    },
+    "permission_mask": {
+      "description": "Permission mask, such as '-wx zray,mon,conf,ct,jq'",
+      "type": "String[1]"
+    }
+  }
+}

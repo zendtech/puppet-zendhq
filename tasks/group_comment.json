@@ -1,0 +1,14 @@
+{
+  "description": "Set a comment for a given group",
+  "input_method": "environment",
+  "parameters": {
+    "group": {
+      "description": "Group to set comment for",
+      "type": "String[1]"
+    },
+    "comment": {
+      "description": "Comment for given group",
+      "type": "Optional[String[1]]"
+    }
+  }
+}

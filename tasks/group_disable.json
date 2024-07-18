@@ -1,0 +1,10 @@
+{
+  "description": "Disable a given group",
+  "input_method": "environment",
+  "parameters": {
+    "group": {
+      "description": "Group to disable",
+      "type": "String[1]"
+    }
+  }
+}

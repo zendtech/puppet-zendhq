@@ -1,0 +1,10 @@
+{
+  "description": "List the permissions for a given group",
+  "input_method": "environment",
+  "parameters": {
+    "group": {
+      "description": "Group to list the permissions of",
+      "type": "String[1]"
+    }
+  }
+}
