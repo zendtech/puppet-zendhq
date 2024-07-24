@@ -10,7 +10,7 @@
       "description": "Optional group comment",
       "type": "Optional[String[1]]"
     },
-    "permission_mask": {
+    "permissions": {
       "description": "Optional permission mask, such as 'r zray,mon,conf,ct,jq'",
       "type": "Optional[String[1]]"
     }
