@@ -39,9 +39,11 @@ Creating a new group and user with read-only permissions using Bolt.
 
 ```
 $ bolt task run zendhq::group_add group=readonly permissions='r zray,mon,conf,ct,jq' -t zendhq_server
-$ bolt task run zendhq::group_print group=readonly -t zendhq_server # verify group creation and permissions
+$ # verify group creation and permissions
+$ bolt task run zendhq::group_print group=readonly -t zendhq_server
 $ bolt task run zendhq::user_add user=readonly_user password=readonly_password group=readonly -t zendhq_server
-$ bolt task run zendhq::user_print user=readonly_user -t zendhq_server # verify user creation and permissions
+$ # verify user creation and permissions
+$ bolt task run zendhq::user_print user=readonly_user -t zendhq_server
 ```
 
 ## Tasks
