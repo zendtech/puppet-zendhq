@@ -14,7 +14,6 @@
 
 * `zendhq::config`: Configure zendhq.ini settings
 * `zendhq::package`: Manage the zendhqd package
-* `zendhq::params`: default settings and according to operating system
 * `zendhq::service`: Manage zendhq service
 
 ### Defined types
@@ -22,6 +21,29 @@
 #### Private Defined types
 
 * `zendhq::config::setting`: Configure a zendhqd.ini setting
+
+### Tasks
+
+* [`group_add`](#group_add): Create a group
+* [`group_add_user`](#group_add_user): Add one or more users to a group
+* [`group_comment`](#group_comment): Set a comment for a given group
+* [`group_disable`](#group_disable): Disable a given group
+* [`group_enable`](#group_enable): Enable a given group
+* [`group_list`](#group_list): List the defined groups
+* [`group_print`](#group_print): List the permissions for a given group
+* [`group_remove`](#group_remove): Remove a given group
+* [`group_remove_user`](#group_remove_user): Remove one or more users from a group
+* [`group_set_permissions`](#group_set_permissions): Set the permissions for a given group
+* [`user_add`](#user_add): Create a user
+* [`user_add_group`](#user_add_group): Add a user to one or more groups
+* [`user_comment`](#user_comment): Set a comment for a given user
+* [`user_disable`](#user_disable): Disable a given user
+* [`user_enable`](#user_enable): Enable a given user
+* [`user_list`](#user_list): List the defined users
+* [`user_password`](#user_password): Change the password for a given user
+* [`user_print`](#user_print): List the permissions for a given user
+* [`user_remove`](#user_remove): Remove a given user
+* [`user_remove_group`](#user_remove_group): Remove a user from one or more groups
 
 ## Classes
 
@@ -77,7 +99,7 @@ Source path or puppet URL to license file
 
 Data type: `Optional[Hash[String, Variant[String, Integer]]]`
 
-System service provider, like systemctl; auto-detected if left undef
+Hash of settings and their values
 
 Default value: `undef`
 
@@ -95,7 +117,7 @@ Data type: `Enum['running', 'stopped']`
 
 Enure value for the ZendHQ service
 
-Default value: `$zendhq::params::service_ensure`
+Default value: `'running'`
 
 ##### <a name="-zendhq--service_name"></a>`service_name`
 
@@ -103,7 +125,7 @@ Data type: `String[1]`
 
 Name of ZendHQ service
 
-Default value: `$zendhq::params::service_name`
+Default value: `'zendhqd'`
 
 ##### <a name="-zendhq--service_enable"></a>`service_enable`
 
@@ -111,7 +133,7 @@ Data type: `Boolean`
 
 Whether the service should be enabled or not
 
-Default value: `$zendhq::params::service_enable`
+Default value: `true`
 
 ##### <a name="-zendhq--package_ensure"></a>`package_ensure`
 
@@ -119,7 +141,7 @@ Data type: `String[1]`
 
 Ensure value for the ZendHQ package
 
-Default value: `$zendhq::params::package_ensure`
+Default value: `'installed'`
 
 ##### <a name="-zendhq--package_name"></a>`package_name`
 
@@ -127,5 +149,355 @@ Data type: `String[1]`
 
 Name of the ZendHQ package
 
-Default value: `$zendhq::params::package_name`
+Default value: `'zendhqd'`
+
+## Tasks
+
+### <a name="group_add"></a>`group_add`
+
+Create a group
+
+**Supports noop?** false
+
+#### Parameters
+
+##### `group`
+
+Data type: `String[1]`
+
+Group to create
+
+##### `comment`
+
+Data type: `Optional[String[1]]`
+
+Optional group comment
+
+##### `permissions`
+
+Data type: `Optional[String[1]]`
+
+Optional permission mask, such as 'r zray,mon,conf,ct,jq'
+
+### <a name="group_add_user"></a>`group_add_user`
+
+Add one or more users to a group
+
+**Supports noop?** false
+
+#### Parameters
+
+##### `group`
+
+Data type: `String[1]`
+
+Group to add one or more users to
+
+##### `user`
+
+Data type: `String[1]`
+
+User(s) to add to the group
+
+### <a name="group_comment"></a>`group_comment`
+
+Set a comment for a given group
+
+**Supports noop?** false
+
+#### Parameters
+
+##### `group`
+
+Data type: `String[1]`
+
+Group to set comment for
+
+##### `comment`
+
+Data type: `Optional[String[1]]`
+
+Comment for given group
+
+### <a name="group_disable"></a>`group_disable`
+
+Disable a given group
+
+**Supports noop?** false
+
+#### Parameters
+
+##### `group`
+
+Data type: `String[1]`
+
+Group to disable
+
+### <a name="group_enable"></a>`group_enable`
+
+Enable a given group
+
+**Supports noop?** false
+
+#### Parameters
+
+##### `group`
+
+Data type: `String[1]`
+
+Group to enable
+
+### <a name="group_list"></a>`group_list`
+
+List the defined groups
+
+**Supports noop?** false
+
+### <a name="group_print"></a>`group_print`
+
+List the permissions for a given group
+
+**Supports noop?** false
+
+#### Parameters
+
+##### `group`
+
+Data type: `String[1]`
+
+Group to list the permissions of
+
+### <a name="group_remove"></a>`group_remove`
+
+Remove a given group
+
+**Supports noop?** false
+
+#### Parameters
+
+##### `group`
+
+Data type: `String[1]`
+
+Group to remove
+
+### <a name="group_remove_user"></a>`group_remove_user`
+
+Remove one or more users from a group
+
+**Supports noop?** false
+
+#### Parameters
+
+##### `group`
+
+Data type: `String[1]`
+
+Group to remove one or more users from
+
+##### `user`
+
+Data type: `String[1]`
+
+User(s) to remove from the group
+
+### <a name="group_set_permissions"></a>`group_set_permissions`
+
+Set the permissions for a given group
+
+**Supports noop?** false
+
+#### Parameters
+
+##### `group`
+
+Data type: `String[1]`
+
+Group to set the permissions of
+
+##### `permissions`
+
+Data type: `String[1]`
+
+Permission mask, such as '-wx zray,mon,conf,ct,jq'
+
+### <a name="user_add"></a>`user_add`
+
+Create a user
+
+**Supports noop?** false
+
+#### Parameters
+
+##### `user`
+
+Data type: `String[1]`
+
+User to create
+
+##### `password`
+
+Data type: `Optional[String[1]]`
+
+Password for user
+
+##### `group`
+
+Data type: `Optional[String[1]]`
+
+Optional group or comma-separated list of groups to add user to
+
+##### `comment`
+
+Data type: `Optional[String[1]]`
+
+Optional user comment
+
+##### `disable`
+
+Data type: `Optional[String[1]]`
+
+Optional disable user flag
+
+### <a name="user_add_group"></a>`user_add_group`
+
+Add a user to one or more groups
+
+**Supports noop?** false
+
+#### Parameters
+
+##### `user`
+
+Data type: `String[1]`
+
+User to add to group(s)
+
+##### `group`
+
+Data type: `String[1]`
+
+Group or comma-separated list of groups
+
+### <a name="user_comment"></a>`user_comment`
+
+Set a comment for a given user
+
+**Supports noop?** false
+
+#### Parameters
+
+##### `user`
+
+Data type: `String[1]`
+
+User to set comment for
+
+##### `comment`
+
+Data type: `Optional[String[1]]`
+
+Comment for given user
+
+### <a name="user_disable"></a>`user_disable`
+
+Disable a given user
+
+**Supports noop?** false
+
+#### Parameters
+
+##### `user`
+
+Data type: `String[1]`
+
+User to disable
+
+### <a name="user_enable"></a>`user_enable`
+
+Enable a given user
+
+**Supports noop?** false
+
+#### Parameters
+
+##### `user`
+
+Data type: `String[1]`
+
+User to enable
+
+### <a name="user_list"></a>`user_list`
+
+List the defined users
+
+**Supports noop?** false
+
+### <a name="user_password"></a>`user_password`
+
+Change the password for a given user
+
+**Supports noop?** false
+
+#### Parameters
+
+##### `user`
+
+Data type: `String[1]`
+
+User to change password for
+
+##### `password`
+
+Data type: `String[1]`
+
+Password for given user
+
+### <a name="user_print"></a>`user_print`
+
+List the permissions for a given user
+
+**Supports noop?** false
+
+#### Parameters
+
+##### `user`
+
+Data type: `String[1]`
+
+User to list the permissions of
+
+### <a name="user_remove"></a>`user_remove`
+
+Remove a given user
+
+**Supports noop?** false
+
+#### Parameters
+
+##### `user`
+
+Data type: `String[1]`
+
+User to remove
+
+### <a name="user_remove_group"></a>`user_remove_group`
+
+Remove a user from one or more groups
+
+**Supports noop?** false
+
+#### Parameters
+
+##### `user`
+
+Data type: `String[1]`
+
+User to remove from group(s)
+
+##### `group`
+
+Data type: `String[1]`
+
+Group or comma-separated list of groups
 
