@@ -1,6 +1,6 @@
 {
   "name": "zend-zendhq",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "Zend by Perforce",
   "summary": "Zend module for installig and configuring ZendHQ",
   "license": "MIT",
