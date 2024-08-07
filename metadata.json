@@ -27,6 +27,20 @@
   ],
   "operatingsystem_support": [
     {
+      "operatingsystem": "Alpine",
+      "operatingsystemrelease": [
+        "3.18",
+        "3.20"
+      ]
+    },
+    {
+      "operatingsystem": "Alma",
+      "operatingsystemrelease": [
+        "8",
+        "9"
+      ]
+    },
+    {
       "operatingsystem": "Amazon",
       "operatingsystemrelease": [
         "2"
@@ -39,24 +53,11 @@
       ]
     },
     {
-      "operatingsystem": "Alma",
+      "operatingsystem": "Debian",
       "operatingsystemrelease": [
-        "8",
-        "9"
-      ]
-    },
-    {
-      "operatingsystem": "Rocky",
-      "operatingsystemrelease": [
-        "8",
-        "9"
-      ]
-    },
-    {
-      "operatingsystem": "Alpine",
-      "operatingsystemrelease": [
-        "3.18",
-        "3.20"
+        "10",
+        "11",
+        "12"
       ]
     },
     {
@@ -76,11 +77,10 @@
       ]
     },
     {
-      "operatingsystem": "Debian",
+      "operatingsystem": "Rocky",
       "operatingsystemrelease": [
-        "10",
-        "11",
-        "12"
+        "8",
+        "9"
       ]
     },
     {
